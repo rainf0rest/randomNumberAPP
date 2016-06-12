@@ -51,7 +51,7 @@
         android:layout_alignStart="@+id/number1" />
 
     <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/button"
+        android:id="@+id/producebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#1E88E5"
