@@ -22,9 +22,9 @@
         android:layout_height="wrap_content"
         android:text="0000"
         android:id="@+id/result"
-        android:layout_below="@+id/number2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="71dp" />
+        android:layout_marginTop="66dp"
+        android:layout_below="@+id/number1"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -33,10 +33,12 @@
         android:ems="10"
         android:id="@+id/number1"
         android:hint="begin number"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="42dp"
         android:layout_below="@+id/textview"
-        android:layout_alignLeft="@+id/textview"
-        android:layout_alignStart="@+id/textview" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/producebtn"
+        android:layout_toLeftOf="@+id/producebtn" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -45,10 +47,9 @@
         android:ems="10"
         android:hint="end number"
         android:id="@+id/number2"
-        android:layout_marginTop="68dp"
-        android:layout_below="@+id/number1"
-        android:layout_alignLeft="@+id/number1"
-        android:layout_alignStart="@+id/number1" />
+        android:layout_alignTop="@+id/number1"
+        android:layout_toEndOf="@+id/producebtn"
+        android:layout_toRightOf="@+id/producebtn" />
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/producebtn"
