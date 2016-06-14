@@ -37,8 +37,8 @@
         android:layout_below="@+id/textview"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/producebtn"
-        android:layout_toLeftOf="@+id/producebtn" />
+        android:layout_toStartOf="@+id/result"
+        android:layout_toLeftOf="@+id/result" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -48,8 +48,9 @@
         android:hint="end number"
         android:id="@+id/number2"
         android:layout_alignTop="@+id/number1"
-        android:layout_toEndOf="@+id/producebtn"
-        android:layout_toRightOf="@+id/producebtn" />
+        android:layout_toRightOf="@+id/result"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/producebtn"
@@ -57,8 +58,18 @@
         android:layout_height="wrap_content"
         android:background="#1E88E5"
         android:text="produce"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp" />
+        android:layout_alignBottom="@+id/result"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/historybtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#1E88E5"
+        android:text="history"
+        android:layout_alignBottom="@+id/result"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
