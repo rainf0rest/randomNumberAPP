@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
     EditText begin, end;
     com.gc.materialdesign.views.ButtonRectangle produce, history;
     SharedPreferences sharedPreferences;
-    int count;
+    int count, beginNum, endNum;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +28,15 @@ public class MainActivity extends AppCompatActivity {
         end = (EditText) findViewById(R.id.number2);
         produce = (com.gc.materialdesign.views.ButtonRectangle) findViewById(R.id.producebtn);
         history = (com.gc.materialdesign.views.ButtonRectangle) findViewById(R.id.historybtn);
-        sharedPreferences = getSharedPreferences("count", MODE_WORLD_READABLE);
+        sharedPreferences = getSharedPreferences("data", MODE_WORLD_READABLE);
         count = sharedPreferences.getInt("count", 0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        beginNum = sharedPreferences.getInt("beginNum", 0);
+        endNum = sharedPreferences.getInt("endNum", 0);
+        begin.setText("" + beginNum);
+        end.setText("" + endNum);
+        editor = sharedPreferences.edit();
         editor.putInt("count", ++count);
+
         editor.commit();
 
         produce.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 int a = Integer.parseInt(begin.getText().toString());
                 int b = Integer.parseInt(end.getText().toString());
                 result.setText("" + makeRandom(a, b));
+                editor.putInt("beginNum", Integer.parseInt(begin.getText().toString()));
+                editor.putInt("endNum", Integer.parseInt(end.getText().toString()));
+                editor.commit();
             }
         });
 
